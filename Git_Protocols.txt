@@ -1,26 +1,30 @@
 1.	Git Protocols: HTTPS and SSH
 HTTPS Protocol
-The HTTPS protocol allows secure communication over the web using Secure Sockets Layer (SSL) encryption. In Git, HTTPS is commonly used for cloning, pulling, and pushing repositories using a username and password or personal access token. Advantages: Simplicity: Easy to set up with no additional configuration. Compatibility: Works behind firewalls and proxies. Disadvantages: Requires repeated authentication for every interaction unless a credential manager is used.
+The HTTPS protocol allows secure communication over the web using Secure Sockets Layer (SSL) encryption. In Git, HTTPS is commonly used for cloning, pulling, and pushing repositories using a username and password or personal access token.
+Advantages: Simplicity: Easy to set up with no additional configuration. 
+Compatibility: Works behind firewalls and proxies. 
+Disadvantages: Requires repeated authentication for every interaction unless a credential manager is used.
 SSH Protocol
-SSH (Secure Shell) is a protocol for secure access to remote repositories using public and private key pairs. Advantages: Security: Strong encryption and no need for repeated password entry. Automation: Ideal for CI/CD pipelines and scripts. Disadvantages: Setup Complexity: Requires generating and configuring SSH keys.
+SSH (Secure Shell) is a protocol for secure access to remote repositories using public and private key pairs. 
+Advantages: Security: Strong encryption and no need for repeated password entry. 
+Automation: Ideal for CI/CD pipelines and scripts. 
+Disadvantages: Setup Complexity: Requires generating and configuring SSH keys.
 2. Real-Time Environments
 Development
 Purpose: Where developers write and test code locally or on a shared server.
- Key Characteristics: Unstable environment with frequent changes. Integration with version control systems (e.g., Git). Tools Used: IDEs, debuggers, and Git.
+Key Characteristics: Unstable environment with frequent changes. Integration with version control systems (e.g., Git). Tools Used: IDEs, debuggers, and Git.
 QA (Quality Assurance)
 Purpose: Ensures application quality by running additional automated tests and checks. 
 Key Characteristics: Close to the Development environment. Focus on integration tests.
 UAT (User Acceptance Testing)
 Purpose: Allows users or clients to validate the functionality of the application. Key Characteristics: Resembles the Production environment. Stable environment for final approval.
-
-
 Production
 Purpose: The live environment where the application is available to end-users. Key Characteristics: Highly stable and optimized. Strict access controls.
 3. Git Commands
 Version Information
 git --version: Displays the currently installed Git version.
- Example: bash $ git --version git version 2.40.1 
-Configuring User Identity
+Example: bash $ git --version git version 2.40.1 
+configuring User Identity
 git config --global user.name "Your Name" and git config --global user.email "your.email@example.com" Purpose: Sets the global username and email for commits. 
 Example: bash $ git config --global user.name "Koushik Reddy" $ git config --global user.email "koushikrdyt@gmail.com" 
 Initializing a Repository
@@ -28,7 +32,7 @@ git init: Creates a new Git repository in the current directory
 Example: bash $ git init Initialized empty Git repository in /path/to/directory/.git/ 
 Adding Files
 git add <file/folder>: Stages files or folders for commit.
- Example: bash $ git add file.txt 
+Example: bash $ git add file.txt 
 Committing Changes
 git commit -m "Commit message": Records staged changes in the repository. Example: bash $ git commit -m "Initial commit" 
 Removing Files from Staging Area
@@ -38,7 +42,11 @@ Example: bash $ git rm --cached file.txt
 
 4. SSH Key Generation
 Steps to Generate an SSH Key
-Open a terminal and run the following command: bash ssh-keygen -t ed25519 -C "your.email@example.com" -t ed25519: Specifies the key type. -C "your.email@example.com": Adds a comment for the key.
-Specify the file path or press Enter to use the default location (~/.ssh/id_ed25519). Set a passphrase (optional) for added security. Your public key will be saved in ~/.ssh/id_ed25519.pub.
+Open a terminal and run the following command:
+bash ssh-keygen -t ed25519 -C "your.email@example.com" 
+-t ed25519: Specifies the key type. -C "your.email@example.com": Adds a comment for the key.
+Specify the file path or press Enter to use the default location (~/.ssh/id_ed25519).
+Set a passphrase (optional) for added security. 
+Your public key will be saved in ~/.ssh/id_ed25519.pub.
 Copying the SSH Key
 To display the public key: bash cat ~/.ssh/id_ed25519.pub To copy it to the clipboard (Windows): bash clip < ~/.ssh/id_ed25519.pub Add the key to platforms like GitHub or GitLab for authentication.
