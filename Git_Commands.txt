@@ -8,7 +8,7 @@ git config --global user.email "koushik@example.com"
 git config --list
 2. Repository Initialization and Management
 a. git init
-Explanation: Initializes a new Git repository.
+Explanation: Initializes an empty new Git repository.
 Applications: Creating a new project with version control.
 Examples:
 
@@ -25,6 +25,8 @@ Applications: Preparing files for commit.
 Examples:
 git add file.txt
 git add .
+git add --all
+git add -A
 b. git rm
 Explanation: Removes files from the working directory and/or index.
 Applications: Deleting files from a repository.
