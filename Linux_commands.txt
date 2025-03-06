@@ -1,0 +1,522 @@
+tkred@KOUSHIK-REDDY MINGW64 ~/Downloads/Linux (main)
+$ ssh -i "Linux.pem" ec2-user@13.201.130.89
+The authenticity of host '13.201.130.89 (13.201.130.89)' can't be established.
+ED25519 key fingerprint is SHA256:lzktmXpP5SPWDlArggD/M0IcovntJ0zefmcwoYugIBY.
+This host key is known by the following other names/addresses:
+    ~/.ssh/known_hosts:4: ec2-13-201-130-1.ap-south-1.compute.amazonaws.com
+    ~/.ssh/known_hosts:6: ec2-13-201-228-80.ap-south-1.compute.amazonaws.com
+    ~/.ssh/known_hosts:7: ec2-13-201-184-42.ap-south-1.compute.amazonaws.com
+    ~/.ssh/known_hosts:8: ec2-3-110-153-81.ap-south-1.compute.amazonaws.com
+    ~/.ssh/known_hosts:9: 3.110.153.81
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '13.201.130.89' (ED25519) to the list of known hosts.
+
+A newer release of "Amazon Linux" is available.
+  Version 2023.6.20250303:
+Run "/usr/bin/dnf check-release-update" for full release and version update info
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+Last login: Thu Mar  6 13:49:28 2025 from 103.60.213.174
+[ec2-user@ip-172-31-2-151 ~]$ sudo su
+[root@ip-172-31-2-151 ec2-user]# pwd
+/home/ec2-user
+[root@ip-172-31-2-151 ec2-user]# cd Puropale
+[root@ip-172-31-2-151 Puropale]# ls
+AWS.txt  DevOps  Name.txt
+[root@ip-172-31-2-151 Puropale]# cd ..
+[root@ip-172-31-2-151 ec2-user]# ls -a
+.  ..  .bash_history  .bash_logout  .bash_profile  .bashrc  .ssh  Puropale
+[root@ip-172-31-2-151 ec2-user]# cd Puropale
+[root@ip-172-31-2-151 Puropale]# cd DevOps
+[root@ip-172-31-2-151 DevOps]# ls -a\
+> ^C
+[root@ip-172-31-2-151 DevOps]# ls -a
+.  ..  GIT.txt  Git.gz  Git.txt  GitHub.txt  Gitlab.txt  symlink
+[root@ip-172-31-2-151 DevOps]# gunzip Git.gz
+[root@ip-172-31-2-151 DevOps]# ls -a
+.  ..  GIT.txt  Git  Git.txt  GitHub.txt  Gitlab.txt  symlink
+[root@ip-172-31-2-151 DevOps]# cat Git
+Git is a version control system that tracks the changes in the code. It is mainly used for collaborationa and VCS.
+[root@ip-172-31-2-151 DevOps]# mv Git Git1.txt
+[root@ip-172-31-2-151 DevOps]# ls -a
+.  ..  GIT.txt  Git.txt  Git1.txt  GitHub.txt  Gitlab.txt  symlink
+[root@ip-172-31-2-151 DevOps]# rm Git1.txt
+rm: remove regular file 'Git1.txt'? yes
+[root@ip-172-31-2-151 DevOps]# gzip Git.txt>Git.gz
+gzip: Git.txt has 1 other link -- file ignored
+[root@ip-172-31-2-151 DevOps]# gzip GIT.txt >GIT.gz
+gzip: GIT.txt has 1 other link -- file ignored
+[root@ip-172-31-2-151 DevOps]# ls -al
+total 16
+drwxr-xr-x. 2 root root 115 Mar  6 16:45 .
+drwxr-xr-x. 3 root root  51 Mar  6 14:46 ..
+-rw-r--r--. 1 root root   0 Mar  6 16:45 GIT.gz
+-rw-r--r--. 2 root root 115 Mar  6 14:31 GIT.txt
+-rw-r--r--. 1 root root   0 Mar  6 16:45 Git.gz
+-rw-r--r--. 2 root root 115 Mar  6 14:31 Git.txt
+-rw-r--r--. 1 root root 122 Mar  6 14:33 GitHub.txt
+-rw-r--r--. 1 root root  97 Mar  6 14:45 Gitlab.txt
+lrwxrwxrwx. 1 root root  32 Mar  6 15:03 symlink -> /home/ec2-user/Puropale/Name.txt
+[root@ip-172-31-2-151 DevOps]# symlink
+bash: symlink: command not found
+[root@ip-172-31-2-151 DevOps]# cat symlink
+Hello Koushik
+
+Discover how Amazon SageMaker Catalog, built on Amazon DataZone, transforms data and AI governance at scale.
+This advanced session explores three key capabilities: centralized artifact management, unified access control, and comprehensive lineage tracking.
+Learn to efficiently organize data and ML assets using semantic search with AI-generated metadata.
+We will demonstrate implementing fine-grained permissions and setting up collaborative workflows.
+You will also see how SageMaker Catalog enables automated data quality monitoring and sensitive data detection.
+Accelerate data analytics and model development, ensure compliance,
+and foster collaboration - ultimately driving faster time to market for your analytics and AI initiatives while maintaining robust governance.
+Hello Man
+[root@ip-172-31-2-151 DevOps]# alias ll ="ls -al"
+alias ll='ls -l --color=auto'
+bash: alias: =ls -al: not found
+[root@ip-172-31-2-151 DevOps]# ll
+total 16
+-rw-r--r--. 1 root root   0 Mar  6 16:45 GIT.gz
+-rw-r--r--. 2 root root 115 Mar  6 14:31 GIT.txt
+-rw-r--r--. 1 root root   0 Mar  6 16:45 Git.gz
+-rw-r--r--. 2 root root 115 Mar  6 14:31 Git.txt
+-rw-r--r--. 1 root root 122 Mar  6 14:33 GitHub.txt
+-rw-r--r--. 1 root root  97 Mar  6 14:45 Gitlab.txt
+lrwxrwxrwx. 1 root root  32 Mar  6 15:03 symlink -> /home/ec2-user/Puropale/Name.txt
+[root@ip-172-31-2-151 DevOps]# ls pwd
+ls: cannot access 'pwd': No such file or directory
+[root@ip-172-31-2-151 DevOps]# ls $ped
+GIT.gz  GIT.txt  Git.gz  Git.txt  GitHub.txt  Gitlab.txt  symlink
+[root@ip-172-31-2-151 DevOps]# ls $pwd
+GIT.gz  GIT.txt  Git.gz  Git.txt  GitHub.txt  Gitlab.txt  symlink
+[root@ip-172-31-2-151 DevOps]# pwd
+/home/ec2-user/Puropale/DevOps
+[root@ip-172-31-2-151 DevOps]# cd ..
+[root@ip-172-31-2-151 Puropale]# less Name.txt
+[root@ip-172-31-2-151 Puropale]# cd DevOps
+[root@ip-172-31-2-151 DevOps]# cd ..
+[root@ip-172-31-2-151 Puropale]# tail -f Name.txt
+Hello Koushik
+
+Discover how Amazon SageMaker Catalog, built on Amazon DataZone, transforms data and AI governance at scale.
+This advanced session explores three key capabilities: centralized artifact management, unified access control, and comprehensive lineage tracking.
+Learn to efficiently organize data and ML assets using semantic search with AI-generated metadata.
+We will demonstrate implementing fine-grained permissions and setting up collaborative workflows.
+You will also see how SageMaker Catalog enables automated data quality monitoring and sensitive data detection.
+Accelerate data analytics and model development, ensure compliance,
+and foster collaboration - ultimately driving faster time to market for your analytics and AI initiatives while maintaining robust governance.
+Hello Man
+^C
+[root@ip-172-31-2-151 Puropale]# wc Name.txt
+ 10 106 805 Name.txt
+[root@ip-172-31-2-151 Puropale]# cd DevOps
+[root@ip-172-31-2-151 DevOps]# wc Git.txt
+  1  21 115 Git.txt
+[root@ip-172-31-2-151 DevOps]# ls -al |wc
+     10      85     479
+[root@ip-172-31-2-151 DevOps]# cat Dogs.txt
+cat: Dogs.txt: No such file or directory
+[root@ip-172-31-2-151 DevOps]# cat > Dogs.txt
+Roxy
+Rudra
+Snoopy
+Brumos
+[root@ip-172-31-2-151 DevOps]# sort Dogs.txt
+Brumos
+Roxy
+Rudra
+Snoopy
+[root@ip-172-31-2-151 DevOps]# sort -r Dogs.txt
+Snoopy
+Rudra
+Roxy
+Brumos
+[root@ip-172-31-2-151 DevOps]# sort Git.txt
+Git is a version control system that tracks the changes in the code. It is mainly used for collaborationa and VCS.
+[root@ip-172-31-2-151 DevOps]# nano Git.txt
+[root@ip-172-31-2-151 DevOps]# sort Git.txt
+Git is a version control system that tracks the changes in the code. It is mainly used for collaborationa and VCS.
+It is being developed by Linus Torvalds in the year 2005.
+The main purpose to develop GIT to save the source code.
+[root@ip-172-31-2-151 DevOps]# sort -r Git.txt
+The main purpose to develop GIT to save the source code.
+It is being developed by Linus Torvalds in the year 2005.
+Git is a version control system that tracks the changes in the code. It is mainly used for collaborationa and VCS.
+[root@ip-172-31-2-151 DevOps]# sort Git.txt |uniq
+Git is a version control system that tracks the changes in the code. It is mainly used for collaborationa and VCS.
+It is being developed by Linus Torvalds in the year 2005.
+The main purpose to develop GIT to save the source code.
+[root@ip-172-31-2-151 DevOps]# ls |uniq
+Dogs.txt
+GIT.gz
+GIT.txt
+Git.gz
+Git.txt
+GitHub.txt
+Gitlab.txt
+symlink
+[root@ip-172-31-2-151 DevOps]# last
+ec2-user pts/0        103.60.213.174   Thu Mar  6 16:36   still logged in
+reboot   system boot  6.1.128-136.201. Thu Mar  6 16:35   still running
+ec2-user pts/0        103.60.213.174   Thu Mar  6 13:49 - 16:33  (02:44)
+reboot   system boot  6.1.128-136.201. Thu Mar  6 13:48 - 16:33  (02:45)
+ec2-user pts/0        103.60.213.174   Thu Mar  6 13:00 - 13:03  (00:02)
+reboot   system boot  6.1.128-136.201. Thu Mar  6 13:00 - 13:03  (00:03)
+ec2-user pts/0        103.60.213.174   Thu Mar  6 12:29 - 12:48  (00:18)
+reboot   system boot  6.1.128-136.201. Thu Mar  6 12:28 - 12:48  (00:19)
+ec2-user pts/0        103.60.213.174   Thu Mar  6 11:33 - 11:35  (00:01)
+reboot   system boot  6.1.128-136.201. Thu Mar  6 11:26 - 11:35  (00:08)
+
+wtmp begins Thu Mar  6 11:26:56 2025
+[root@ip-172-31-2-151 DevOps]# ^C
+[root@ip-172-31-2-151 DevOps]# ls -la
+total 20
+drwxr-xr-x. 2 root root 131 Mar  6 16:58 .
+drwxr-xr-x. 3 root root  51 Mar  6 14:46 ..
+-rw-r--r--. 1 root root  25 Mar  6 16:58 Dogs.txt
+-rw-r--r--. 1 root root   0 Mar  6 16:45 GIT.gz
+-rw-r--r--. 2 root root 230 Mar  6 17:01 GIT.txt
+-rw-r--r--. 1 root root   0 Mar  6 16:45 Git.gz
+-rw-r--r--. 2 root root 230 Mar  6 17:01 Git.txt
+-rw-r--r--. 1 root root 122 Mar  6 14:33 GitHub.txt
+-rw-r--r--. 1 root root  97 Mar  6 14:45 Gitlab.txt
+lrwxrwxrwx. 1 root root  32 Mar  6 15:03 symlink -> /home/ec2-user/Puropale/Name.txt
+[root@ip-172-31-2-151 DevOps]# ls -alh
+total 20K
+drwxr-xr-x. 2 root root 131 Mar  6 16:58 .
+drwxr-xr-x. 3 root root  51 Mar  6 14:46 ..
+-rw-r--r--. 1 root root  25 Mar  6 16:58 Dogs.txt
+-rw-r--r--. 1 root root   0 Mar  6 16:45 GIT.gz
+-rw-r--r--. 2 root root 230 Mar  6 17:01 GIT.txt
+-rw-r--r--. 1 root root   0 Mar  6 16:45 Git.gz
+-rw-r--r--. 2 root root 230 Mar  6 17:01 Git.txt
+-rw-r--r--. 1 root root 122 Mar  6 14:33 GitHub.txt
+-rw-r--r--. 1 root root  97 Mar  6 14:45 Gitlab.txt
+lrwxrwxrwx. 1 root root  32 Mar  6 15:03 symlink -> /home/ec2-user/Puropale/Name.txt
+[root@ip-172-31-2-151 DevOps]# ls -h
+Dogs.txt  GIT.gz  GIT.txt  Git.gz  Git.txt  GitHub.txt  Gitlab.txt  symlink
+[root@ip-172-31-2-151 DevOps]# last
+ec2-user pts/0        103.60.213.174   Thu Mar  6 16:36   still logged in
+reboot   system boot  6.1.128-136.201. Thu Mar  6 16:35   still running
+ec2-user pts/0        103.60.213.174   Thu Mar  6 13:49 - 16:33  (02:44)
+reboot   system boot  6.1.128-136.201. Thu Mar  6 13:48 - 16:33  (02:45)
+ec2-user pts/0        103.60.213.174   Thu Mar  6 13:00 - 13:03  (00:02)
+reboot   system boot  6.1.128-136.201. Thu Mar  6 13:00 - 13:03  (00:03)
+ec2-user pts/0        103.60.213.174   Thu Mar  6 12:29 - 12:48  (00:18)
+reboot   system boot  6.1.128-136.201. Thu Mar  6 12:28 - 12:48  (00:19)
+ec2-user pts/0        103.60.213.174   Thu Mar  6 11:33 - 11:35  (00:01)
+reboot   system boot  6.1.128-136.201. Thu Mar  6 11:26 - 11:35  (00:08)
+
+wtmp begins Thu Mar  6 11:26:56 2025
+[root@ip-172-31-2-151 DevOps]# last
+ec2-user pts/0        103.60.213.174   Thu Mar  6 16:36   still logged in
+reboot   system boot  6.1.128-136.201. Thu Mar  6 16:35   still running
+ec2-user pts/0        103.60.213.174   Thu Mar  6 13:49 - 16:33  (02:44)
+reboot   system boot  6.1.128-136.201. Thu Mar  6 13:48 - 16:33  (02:45)
+ec2-user pts/0        103.60.213.174   Thu Mar  6 13:00 - 13:03  (00:02)
+reboot   system boot  6.1.128-136.201. Thu Mar  6 13:00 - 13:03  (00:03)
+ec2-user pts/0        103.60.213.174   Thu Mar  6 12:29 - 12:48  (00:18)
+reboot   system boot  6.1.128-136.201. Thu Mar  6 12:28 - 12:48  (00:19)
+ec2-user pts/0        103.60.213.174   Thu Mar  6 11:33 - 11:35  (00:01)
+reboot   system boot  6.1.128-136.201. Thu Mar  6 11:26 - 11:35  (00:08)
+
+wtmp begins Thu Mar  6 11:26:56 2025
+[root@ip-172-31-2-151 DevOps]# history -r
+[root@ip-172-31-2-151 DevOps]# .bash_history
+bash: .bash_history: command not found
+[root@ip-172-31-2-151 DevOps]# cd..
+bash: cd..: command not found
+[root@ip-172-31-2-151 DevOps]# cd ..
+[root@ip-172-31-2-151 ec2-user]# ^C
+[root@ip-172-31-2-151 ec2-user]# history
+    1  ls /root
+    2  rm -rf /root/Puropale
+    3  ls /home/ec2-user
+    4  ls /root
+    5  ls/home/ec2-user
+    6  ls /home/ec2-user
+    7  exit
+    8  pwd
+    9  exit
+   10  pwd
+   11  exit
+   12  pwd
+   13  exit
+   14  pwd
+   15  mkdir Puropale
+   16  ls -a
+   17  ls /root
+   18  ls /ec2-user
+   19  cd Puropale
+   20  mkdir Name.txt
+   21  cd Name.txt
+   22  rmdir Name.txt
+   23  cd ..
+   24  rmdir Name.txt
+   25  cd ..
+   26  ls
+   27  cd Puropale
+   28  touch Name.txt
+   29  echo "Hello Koushik">Name.txt
+   30  cat Name.txt
+   31  touch Name.txt
+   32  nano Name.txt
+   33  cat Name.txt
+   34  ls
+   35  nano Name.txt
+   36  cat Name.txt
+   37  vi Name.txt
+   38  cat Name.txt
+   39  echo "Amazon Elastic Cloud Compute is EC2 which provides cloud instances" > AWS.txt
+   40  ls
+   41  ls -a
+   42  pwd
+   43  vi AWS.txt
+   44  cat AWS.txt
+   45  pwd
+   46  man (ls)
+   47  man
+   48  cd
+   49  pwd
+   50  cd Puropale
+   51  cd /home/ec2-user
+   52  cd Puropale
+   53  pwd
+   54  man cd
+   55  cd Name.txt
+   56  touch Name.txt
+   57  cat Name.txt
+   58  cat AWS.txt
+   59  cd ..
+   60  pwd
+   61  cd ..
+   62  pwd
+   63  cd /home/ec2-user
+   64  pwd
+   65  cd /root
+   66  pwd
+   67  man ls
+   68  cd /home/ec2-user
+   69  ls
+   70  cd Puropale
+   71  ls
+   72  ls --oneline
+   73  mkdir DevOps
+   74  cd Devops
+   75  ls
+   76  cd Devops
+   77  cd DevOps
+   78  ls
+   79  nano Git.txt
+   80  cat Git.txt
+   81  ls
+   82  cat > Github.txt
+   83  ls
+   84  cd ..
+   85  ls
+   86  pwd
+   87  cd DevOps
+   88  pwd
+   89  ls -l
+   90  la -a
+   91  ls -a
+   92  la -l
+   93  ls -l
+   94  cd ..
+   95  ls
+   96  cat > Gitlab.txt
+   97  mv Gitlab.txt DevOps/
+   98  cd DevOps
+   99  ls -a
+  100  cat Gitlab.txt
+  101  cd ..
+  102  cd ..
+  103  ls -a
+  104  ls -l
+  105  cd Puropale
+  106  ls -a
+  107  ls -l
+  108  pwwd
+  109  pwd
+  110  exit
+  111  pwd
+  112  cd Puropale
+  113  ls
+  114  cd ..
+  115  ls -a
+  116  cd Puropale
+  117  cd DevOps
+  118  ls -a\
+  119  ls -a
+  120  gunzip Git.gz
+  121  ls -a
+  122  cat Git
+  123  mv Git Git1.txt
+  124  ls -a
+  125  rm Git1.txt
+  126  gzip Git.txt>Git.gz
+  127  gzip GIT.txt >GIT.gz
+  128  ls -al
+  129  symlink
+  130  cat symlink
+  131  alias ll ="ls -al"
+  132  ll
+  133  ls pwd
+  134  ls $ped
+  135  ls $pwd
+  136  pwd
+  137  cd ..
+  138  less Name.txt
+  139  cd DevOps
+  140  cd ..
+  141  tail -f Name.txt
+  142  wc Name.txt
+  143  cd DevOps
+  144  wc Git.txt
+  145  ls -al |wc
+  146  cat Dogs.txt
+  147  cat > Dogs.txt
+  148  sort Dogs.txt
+  149  sort -r Dogs.txt
+  150  sort Git.txt
+  151  nano Git.txt
+  152  sort Git.txt
+  153  sort -r Git.txt
+  154  sort Git.txt |uniq
+  155  ls |uniq
+  156  last
+  157  ls -la
+  158  ls -alh
+  159  ls -h
+  160  last
+  161  last
+  162  history -r
+  163  ls /root
+  164  rm -rf /root/Puropale
+  165  ls /home/ec2-user
+  166  ls /root
+  167  ls/home/ec2-user
+  168  ls /home/ec2-user
+  169  exit
+  170  pwd
+  171  exit
+  172  pwd
+  173  exit
+  174  pwd
+  175  exit
+  176  pwd
+  177  mkdir Puropale
+  178  ls -a
+  179  ls /root
+  180  ls /ec2-user
+  181  cd Puropale
+  182  mkdir Name.txt
+  183  cd Name.txt
+  184  rmdir Name.txt
+  185  cd ..
+  186  rmdir Name.txt
+  187  cd ..
+  188  ls
+  189  cd Puropale
+  190  touch Name.txt
+  191  echo "Hello Koushik">Name.txt
+  192  cat Name.txt
+  193  touch Name.txt
+  194  nano Name.txt
+  195  cat Name.txt
+  196  ls
+  197  nano Name.txt
+  198  cat Name.txt
+  199  vi Name.txt
+  200  cat Name.txt
+  201  echo "Amazon Elastic Cloud Compute is EC2 which provides cloud instances" > AWS.txt
+  202  ls
+  203  ls -a
+  204  pwd
+  205  vi AWS.txt
+  206  cat AWS.txt
+  207  pwd
+  208  man (ls)
+  209  man
+  210  cd
+  211  pwd
+  212  cd Puropale
+  213  cd /home/ec2-user
+  214  cd Puropale
+  215  pwd
+  216  man cd
+  217  cd Name.txt
+  218  touch Name.txt
+  219  cat Name.txt
+  220  cat AWS.txt
+  221  cd ..
+  222  pwd
+  223  cd ..
+  224  pwd
+  225  cd /home/ec2-user
+  226  pwd
+  227  cd /root
+  228  pwd
+  229  man ls
+  230  cd /home/ec2-user
+  231  ls
+  232  cd Puropale
+  233  ls
+  234  ls --oneline
+  235  mkdir DevOps
+  236  cd Devops
+  237  ls
+  238  cd Devops
+  239  cd DevOps
+  240  ls
+  241  nano Git.txt
+  242  cat Git.txt
+  243  ls
+  244  cat > Github.txt
+  245  ls
+  246  cd ..
+  247  ls
+  248  pwd
+  249  cd DevOps
+  250  pwd
+  251  ls -l
+  252  la -a
+  253  ls -a
+  254  la -l
+  255  ls -l
+  256  cd ..
+  257  ls
+  258  cat > Gitlab.txt
+  259  mv Gitlab.txt DevOps/
+  260  cd DevOps
+  261  ls -a
+  262  cat Gitlab.txt
+  263  cd ..
+  264  cd ..
+  265  ls -a
+  266  ls -l
+  267  cd Puropale
+  268  ls -a
+  269  ls -l
+  270  pwwd
+  271  pwd
+  272  exit
+  273  .bash_history
+  274  cd..
+  275  cd ..
+  276  cd ..
+  277  pwd
+  278  .bash_history
+  279  cp ~/.bash_history ~/.bash_history
+  280  cp ~/.bash_history
+  281  cp ~/.bash_history ~/.bash_history_backup
+  282  cat ~/.bash_history
+  283  history
+[root@ip-172-31-2-151 ec2-user]#
