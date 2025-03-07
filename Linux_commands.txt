@@ -1,5 +1,5 @@
 man [command]:
-man command is used to get the manual of a particular command to know the existing commands in it.
+man command_name displays the manual of a particular command to know the existing commands in it.
 ls [options]:
 ls command lists the files and directories in the current working directory.
 ls -a:
